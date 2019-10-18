@@ -6,7 +6,7 @@
 .spell-header {
   display: flex;
   justify-content: space-between;
-  border-radius: .5em .5em 0 0;
+  /* border-radius: .5em .5em 0 0; */
   background: var(--header-bg);
   color: var(--header-text);
 }
@@ -20,8 +20,11 @@
 }
 
 .spell-header ul li {
-  width: 7em;
   padding: 1em 0;
+}
+
+.spell-header ul li.spell-header-level {
+  width: 7em;
   text-align: center;
 }
 

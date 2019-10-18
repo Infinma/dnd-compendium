@@ -1,5 +1,5 @@
-import React from "react";
-import "./Spell.css";
+import React from 'react';
+import './Spell.css';
 
 class Spell extends React.Component {
   constructor() {
@@ -31,21 +31,20 @@ class Spell extends React.Component {
   }
 
   render() {
-    let display = this.props.display;
-    let { name, type, casting_time, range, components, 
+    let { id, name, type, casting_time, range, components, display,
       duration, classes, description, level } = this.props.spell;
     let classList = this.formatClass(classes);
     let descTags = this.formatDescription(description);
     return (
       <div>
-        <div class="spell-header">
+        <div class="spell-header" onClick={ () => this.props.displaySpell(id) }>
           <ul>
-            <li>{ level }</li>
+            <li class="spell-header-level">{ level }</li>
             <li>{ name }</li>
           </ul>
           <p class="toggle">{ display ? '-' : '+' }</p>
         </div>
-        <div className={ display ? '' : 'hidden' } class="spell-desc">
+        <div className={ display ? 'spell-desc' : 'hidden' } >
           <h1 class="main">{ name }</h1>
           <p class="type">{ type }</p>
           <p><span class="descriptor">Casting Time:</span> { casting_time }</p>
@@ -53,6 +52,7 @@ class Spell extends React.Component {
           <p><span class="descriptor">Components:</span> { components.raw }</p>
           <p><span class="descriptor">Duration:</span> { duration }</p>
           <p><span class="descriptor">Classes:</span> { classList }</p>
+          <br />
           { descTags }
         </div>
       </div>
