@@ -3,6 +3,10 @@
   --header-text: white;
 }
 
+.spell-container {
+  margin: .5em 0;
+}
+
 .spell-header {
   display: flex;
   justify-content: space-between;
@@ -14,9 +18,9 @@
 .spell-header ul {
   margin: 0;
   padding: 0;
-  list-style-type: none;
   display: flex;
   flex-direction: row;
+  list-style-type: none;
 }
 
 .spell-header ul li {

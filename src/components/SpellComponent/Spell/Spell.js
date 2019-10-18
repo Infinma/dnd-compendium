@@ -23,9 +23,9 @@ class Spell extends React.Component {
     let descArr = description.split('\n');
     let descTags = descArr.map((text, i) => {
       if (i === 0) {
-        return <p><span class="descriptor">Description:</span> { text }<br/></p>;
+        return <p key={ i }><span className="descriptor">Description:</span> { text }<br/></p>;
       }
-      return <p>{ text }<br/></p>;
+      return <p key={ i }>{ text }<br/></p>;
     })
     return descTags;
   }
@@ -36,22 +36,22 @@ class Spell extends React.Component {
     let classList = this.formatClass(classes);
     let descTags = this.formatDescription(description);
     return (
-      <div>
-        <div class="spell-header" onClick={ () => this.props.displaySpell(id) }>
+      <div className="spell-container">
+        <div className="spell-header" onClick={ () => this.props.displaySpell(id) }>
           <ul>
-            <li class="spell-header-level">{ level }</li>
+            <li className="spell-header-level">{ level }</li>
             <li>{ name }</li>
           </ul>
-          <p class="toggle">{ display ? '-' : '+' }</p>
+          <p className="toggle">{ display ? '-' : '+' }</p>
         </div>
         <div className={ display ? 'spell-desc' : 'hidden' } >
-          <h1 class="main">{ name }</h1>
-          <p class="type">{ type }</p>
-          <p><span class="descriptor">Casting Time:</span> { casting_time }</p>
-          <p><span class="descriptor">Range:</span> { range }</p>
-          <p><span class="descriptor">Components:</span> { components.raw }</p>
-          <p><span class="descriptor">Duration:</span> { duration }</p>
-          <p><span class="descriptor">Classes:</span> { classList }</p>
+          <h1 className="main">{ name }</h1>
+          <p className="type">{ type }</p>
+          <p><span className="descriptor">Casting Time:</span> { casting_time }</p>
+          <p><span className="descriptor">Range:</span> { range }</p>
+          <p><span className="descriptor">Components:</span> { components.raw }</p>
+          <p><span className="descriptor">Duration:</span> { duration }</p>
+          <p><span className="descriptor">Classes:</span> { classList }</p>
           <br />
           { descTags }
         </div>

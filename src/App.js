@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import SpellList from './components/SpellComponent/SpellList/SpellList';
+import SpellContainer from './components/SpellComponent/SpellContainer/SpellContainer';
 
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        <SpellList />
+        <SpellContainer />
       </div>
     );
   }
