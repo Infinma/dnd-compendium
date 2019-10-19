@@ -10,6 +10,7 @@
   margin: 0;
   padding: 1em 0;
   width: 7em;
+  cursor: pointer;
 }
 
 .spell-list-header ul li:first-child {

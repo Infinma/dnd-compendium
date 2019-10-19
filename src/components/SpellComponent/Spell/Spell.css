@@ -12,17 +12,16 @@
 .spell-header {
   display: flex;
   justify-content: space-between;
-  /* border-radius: .5em .5em 0 0; */
   background: var(--header-bg);
   color: var(--header-text);
   cursor: pointer;
 }
 
 .spell-header ul {
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
   list-style-type: none;
 }
 
@@ -31,14 +30,20 @@
 }
 
 .spell-header ul li.spell-header-level {
-  width: 7em;
+  width: 112px;
   text-align: center;
 }
 
-.spell-header .toggle {
-  justify-content: flex-end;
-  width: 7em;
-  padding: 1em 0;
+.spell-header ul li.spell-header-name {
+  width: calc(100% - 224px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.spell-header ul li.toggle {
+  width: 112px;
+  margin-left: auto;
   text-align: center;
 }
 

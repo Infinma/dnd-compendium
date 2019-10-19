@@ -1,5 +1,6 @@
 import React from 'react';
 import './Spell.css';
+import { SpellKey } from '../../../lib/KeyLoader';
 
 class Spell extends React.Component {
   constructor() {
@@ -32,7 +33,7 @@ class Spell extends React.Component {
   }
 
   formatLevel(level) {
-    if (level === 'cantrip') {
+    if (level === SpellKey.CANTRIP) {
       return level[0].toUpperCase() + level.slice(1);
     }
     return level;
@@ -50,9 +51,9 @@ class Spell extends React.Component {
         <div className="spell-header" onClick={ () => this.props.displaySpell(id) }>
           <ul>
             <li className="spell-header-level">{ levelFormat }</li>
-            <li>{ name }</li>
+            <li className="spell-header-name">{ name }</li>
+            <li className="toggle">{ display ? '-' : '+' }</li>
           </ul>
-          <p className="toggle">{ display ? '-' : '+' }</p>
         </div>
         <div className={ display ? 'spell-desc' : 'hidden' } >
           <h1 className="main">{ name }</h1>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './SpellList.css';
+import { SpellKey } from '../../../lib/KeyLoader';
 import Spell from '../Spell/Spell';
 
 class SpellList extends React.Component {
@@ -18,8 +19,8 @@ class SpellList extends React.Component {
       <div>
         <div className="spell-list-header">
           <ul>
-            <li>Level</li>
-            <li>Spell</li>
+            <li onClick={ () => this.props.sortSpell(SpellKey.LEVEL) } >LEVEL</li>
+            <li onClick={ () => this.props.sortSpell(SpellKey.SPELL) } >SPELL</li>
           </ul>
         </div>
         { spellDivs }
