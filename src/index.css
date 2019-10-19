@@ -1,20 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap);
 
+:root {
+  --main-font: 'Lexend Deca';
+}
+
 body {
   margin: 0;
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: var(--main-font), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: var(--main-font), sans-serif;
 }
 
 input {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: var(--main-font), sans-serif;
 }
 
 button {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: var(--main-font), sans-serif;
 }

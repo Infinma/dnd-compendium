@@ -1,0 +1,39 @@
+@import "../../theme.css";
+
+.header-container {
+  background: var(--main-color);
+  color: var(--text-color);
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+.header-container h1 {
+  margin: 0;
+  padding: .5em;
+}
+
+.header-nav {
+  padding: 1em 0 0;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li {
+  margin: 0;
+  padding: 1em;
+  display: block;
+  cursor: pointer;
+}
+
+.header-nav ul li:hover {
+  background: var(--secondary-color);
+}
+
+.header-nav ul li.active {
+  background: var(--secondary-color);
+}

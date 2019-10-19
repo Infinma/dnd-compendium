@@ -1,6 +1,8 @@
+@import "../../../theme.css";
+
 :root {
-  --form-button: crimson;
-  --form-button-text: white;
+  --form-button: var(--main-color);
+  --form-button-text: var(--text-color);
 }
 
 .spell-form form {

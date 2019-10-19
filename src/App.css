@@ -1,4 +1,8 @@
-.app-container {
+.module-container {
   margin: auto;
   width: 80%;
+}
+
+.disabled-container {
+  display: none;
 }

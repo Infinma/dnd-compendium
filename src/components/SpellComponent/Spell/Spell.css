@@ -1,6 +1,8 @@
+@import "../../../theme.css";
+
 :root {
-  --header-bg: crimson;
-  --header-text: white;
+  --header-bg: var(--main-color);
+  --header-text: var(--text-color);
 }
 
 .spell-container {
@@ -13,6 +15,7 @@
   /* border-radius: .5em .5em 0 0; */
   background: var(--header-bg);
   color: var(--header-text);
+  cursor: pointer;
 }
 
 .spell-header ul {
