@@ -6,6 +6,7 @@ class Spell extends React.Component {
     super();
     this.formatClass = this.formatClass.bind(this);
     this.formatDescription = this.formatDescription.bind(this);
+    this.formatLevel = this.formatLevel.bind(this);
   }
 
   formatClass(classes) {
@@ -30,16 +31,25 @@ class Spell extends React.Component {
     return descTags;
   }
 
+  formatLevel(level) {
+    if (level === 'cantrip') {
+      return level[0].toUpperCase() + level.slice(1);
+    }
+    return level;
+  }
+
   render() {
     let { id, name, type, casting_time, range, components, display,
       duration, classes, description, level } = this.props.spell;
+    
     let classList = this.formatClass(classes);
     let descTags = this.formatDescription(description);
+    let levelFormat = this.formatLevel(level);
     return (
       <div className="spell-container">
         <div className="spell-header" onClick={ () => this.props.displaySpell(id) }>
           <ul>
-            <li className="spell-header-level">{ level }</li>
+            <li className="spell-header-level">{ levelFormat }</li>
             <li>{ name }</li>
           </ul>
           <p className="toggle">{ display ? '-' : '+' }</p>

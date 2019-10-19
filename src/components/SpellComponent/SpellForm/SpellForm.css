@@ -1,0 +1,23 @@
+:root {
+  --form-button: crimson;
+  --form-button-text: white;
+}
+
+.spell-form form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spell-form input {
+  width: stretch;
+  margin: 0 .5em 0 0;
+}
+
+.spell-form button {
+  background: var(--form-button);
+  color: var(--form-button-text);
+  border: none;
+  cursor: pointer;
+  padding: 1em 2em;
+}

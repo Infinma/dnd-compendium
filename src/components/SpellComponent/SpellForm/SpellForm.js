@@ -1,4 +1,5 @@
 import React from 'react';
+import './SpellForm.css';
 
 class SpellForm extends React.Component {
   constructor() {
@@ -15,6 +16,7 @@ class SpellForm extends React.Component {
     this.setState({
       [name]: value
     });
+    this.props.filterSpell({name: value});
   }
 
   submitForm(e) {
@@ -24,7 +26,7 @@ class SpellForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="spell-form" >
         <form onSubmit={ this.submitForm }>
           <input
             type="text"
