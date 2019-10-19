@@ -11,7 +11,8 @@
 
 .spell-form input {
   width: stretch;
-  margin: 0 .5em 0 0;
+  margin: 0;
+  padding: 0 1em;
 }
 
 .spell-form button {
