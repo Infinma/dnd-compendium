@@ -21,9 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <Header displayContainer={ this.displayContainer } />
-        </div>
+        <Header displayContainer={ this.displayContainer } />
         <div className="module-container" >
           <div className={ this.state.spells ? '' : 'disabled-container' }>
             <SpellContainer />
