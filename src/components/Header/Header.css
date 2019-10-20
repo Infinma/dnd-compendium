@@ -13,7 +13,8 @@
 }
 
 .header-nav {
-  padding: 1em 0 0;
+  padding: 0;
+  background: var(--secondary-color);
 }
 
 .header-nav ul {
@@ -31,9 +32,9 @@
 }
 
 .header-nav ul li:hover {
-  background: var(--secondary-color);
+  background: var(--main-color);
 }
 
 .header-nav ul li.active {
-  background: var(--secondary-color);
+  background: var(--main-color);
 }

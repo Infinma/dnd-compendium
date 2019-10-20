@@ -5,22 +5,26 @@
   --form-button-text: var(--text-color);
 }
 
-.spell-form form {
+.spell-form {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+}
+
+.spell-form p.spell-show-filter {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.spell-form p.spell-show-filter:hover {
+  color: var(--main-color);
+  cursor: pointer;
 }
 
 .spell-form input {
   width: stretch;
   margin: 0;
-  padding: 0 1em;
+  padding: .9em 1em;
 }
 
-.spell-form button {
-  background: var(--form-button);
-  color: var(--form-button-text);
-  border: none;
-  cursor: pointer;
-  padding: 1em 2em;
+.disable-filter {
+  display: none;
 }

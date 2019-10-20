@@ -32,3 +32,20 @@ export function SortByLevel(spellList) {
 export function SortByName(spellList) {
   return spellList.sort(nameCompare);
 }
+
+export function FilterHelper(arr, category, comparison) {
+  let filteredList = arr.filter((element) => {
+    let el = element[category].toLowerCase();
+    return el.includes(comparison.toLowerCase());
+  })
+  return filteredList;
+}
+
+export function ObjectContains(obj, value) {
+  for (let key in obj) {
+    if (obj[key] === value) {
+      return true;
+    }
+  }
+  return false;
+}
