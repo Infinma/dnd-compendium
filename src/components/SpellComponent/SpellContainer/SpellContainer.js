@@ -40,8 +40,9 @@ class SpellContainer extends React.Component {
         }
         if (activeClass) {
           let validClass = false;
-          for (let i in spell.classes) {
-            if (form[SpellKey.CLASS][spell.classes[i]]) {
+          let classArr = spell.classes.split(', ');
+          for (let i in classArr) {
+            if (form[SpellKey.CLASS][classArr[i]]) {
               validClass = true;
               break;
             }

@@ -13,36 +13,36 @@ class SpellFormAdvanced extends React.Component {
         [SpellKey.CLASS]: false
       },
       [SpellKey.LEVEL]: {
-        cantrip: false,
-        '1': false,
-        '2': false,
-        '3': false,
-        '4': false,
-        '5': false,
-        '6': false,
-        '7': false,
-        '8': false,
-        '9': false
+        Cantrip: false,
+        '1st-level': false,
+        '2nd-level': false,
+        '3rd-level': false,
+        '4th-level': false,
+        '5th-level': false,
+        '6th-level': false,
+        '7th-level': false,
+        '8th-level': false,
+        '9th-level': false
       },
       [SpellKey.SCHOOL]: {
-        abjuration: false,
-        conjuration: false,
-        divination: false,
-        enchantment: false,
-        evocation: false,
-        illusion: false,
-        necromancy: false,
-        transmutation: false
+        Abjuration: false,
+        Conjuration: false,
+        Divination: false,
+        Enchantment: false,
+        Evocation: false,
+        Illusion: false,
+        Necromancy: false,
+        Transmutation: false
       },
       [SpellKey.CLASS]: {
-        bard: false,
-        cleric: false,
-        druid: false,
-        paladin: false,
-        ranger: false,
-        sorcerer: false,
-        warlock: false,
-        wizard: false
+        Bard: false,
+        Cleric: false,
+        Druid: false,
+        Paladin: false,
+        Ranger: false,
+        Sorcerer: false,
+        Warlock: false,
+        Wizard: false
       }
     };
     this.createCheckboxArray = this.createCheckboxArray.bind(this);

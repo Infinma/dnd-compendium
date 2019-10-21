@@ -1,30 +1,39 @@
 export const SpellKey = {
   SPELL: 'spell',
   LEVEL: 'level',
-  CANTRIP: 'cantrip',
+  CANTRIP: 'Cantrip',
   CLASS: 'class',
   SCHOOL: 'school'
 };
 export const SpellLevels = [
-  SpellKey.CANTRIP, '1', '2', '3', '4', '5', '6', '7', '8', '9'
+  SpellKey.CANTRIP,
+  '1st-level',
+  '2nd-level',
+  '3rd-level',
+  '4th-level',
+  '5th-level',
+  '6th-level',
+  '7th-level',
+  '8th-level',
+  '9th-level'
 ];
 export const SpellSchools = [
-  'abjuration',
-  'conjuration',
-  'divination',
-  'enchantment',
-  'evocation',
-  'illusion',
-  'necromancy',
-  'transmutation'
+  'Abjuration',
+  'Conjuration',
+  'Divination',
+  'Enchantment',
+  'Evocation',
+  'Illusion',
+  'Necromancy',
+  'Transmutation'
 ];
 export const SpellClasses = [
-  'bard',
-  'cleric',
-  'druid',
-  'paladin',
-  'ranger',
-  'sorcerer',
-  'warlock',
-  'wizard'
+  'Bard',
+  'Cleric',
+  'Druid',
+  'Paladin',
+  'Ranger',
+  'Sorcerer',
+  'Warlock',
+  'Wizard'
 ];
