@@ -26,7 +26,7 @@ class Spell extends React.Component {
 
   render() {
     let { id, name, casting_time, range, components, material, display, concentration,
-      duration, classes, desc, level, school, ritual, higher_level } = this.props.spell;
+      duration, classes, desc, level, school, ritual, higher_level, origin } = this.props.spell;
     
     let type = ritual ? `${level} ${school} (Ritual)` : `${level} ${school}`;
     let durationCon = concentration ? `Concentration, ${duration}` : duration;
@@ -56,6 +56,7 @@ class Spell extends React.Component {
             <p><br/><span className="descriptor">At Higher Levels:</span> { higher_level }</p> :
             null
           }
+          <p><br/><span className="descriptor">Source:</span> { origin }</p>
         </div>
       </div>
     );
