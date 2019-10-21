@@ -9,21 +9,24 @@ class Spell extends React.Component {
 
   formatDescription(desc) {
     let descArr = desc.split('\n');
+    descArr = descArr.filter((text) => {
+      if (text !== '') {
+        return true;
+      }
+      return false;
+    });
     let descTags = descArr.map((text, i) => {
       if (i === 0) {
-        return <p key={ i }><span className="descriptor">Description:</span> { text }<br/><br/></p>;
+        return <p key={ i }><span className="descriptor">Description:</span> { text }</p>;
       }
-      if (i === descArr.length - 1) {
-        return <p key={ i }>{ text }</p>;
-      }
-      return <p key={ i }>{ text }<br/><br/></p>;
+      return <p key={ i }><br/>{ text }</p>;
     })
     return descTags;
   }
 
   render() {
     let { id, name, casting_time, range, components, material, display, concentration,
-      duration, classes, desc, level, school, ritual } = this.props.spell;
+      duration, classes, desc, level, school, ritual, higher_level } = this.props.spell;
     
     let type = ritual ? `${level} ${school} (Ritual)` : `${level} ${school}`;
     let durationCon = concentration ? `Concentration, ${duration}` : duration;
@@ -49,6 +52,10 @@ class Spell extends React.Component {
           <p><span className="descriptor">Classes:</span> { classes }</p>
           <br />
           { description }
+          { typeof higher_level !== 'undefined' ? 
+            <p><br/><span className="descriptor">At Higher Levels:</span> { higher_level }</p> :
+            null
+          }
         </div>
       </div>
     );
