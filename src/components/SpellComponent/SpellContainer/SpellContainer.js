@@ -26,19 +26,16 @@ class SpellContainer extends React.Component {
   }
 
   filterSpell(form) {
-    let activeLevel = form.active.level;
-    let activeSchool = form.active.school;
-    let activeClass = form.active.class;
     this.setState(() => {
       let filteredSpellList = this.state.fullSpellList.filter((spell) => {
         let criteria = true;
-        if (activeLevel) {
+        if (form.active[SpellKey.LEVEL]) {
           criteria = criteria && form[SpellKey.LEVEL][spell.level];
         }
-        if (activeSchool) {
+        if (form.active[SpellKey.SCHOOL]) {
           criteria = criteria && form[SpellKey.SCHOOL][spell.school];
         }
-        if (activeClass) {
+        if (form.active[SpellKey.CLASS]) {
           let validClass = false;
           let classArr = spell.classes.split(', ');
           for (let i in classArr) {
@@ -48,6 +45,12 @@ class SpellContainer extends React.Component {
             }
           }
           criteria = criteria && validClass;
+        }
+        if (form.active[SpellKey.SOURCE]) {
+          criteria = criteria && form[SpellKey.SOURCE][spell.origin];
+        }
+        if (form.active[SpellKey.RITUAL]) {
+          criteria = criteria && spell.ritual;
         }
         return criteria;
       });

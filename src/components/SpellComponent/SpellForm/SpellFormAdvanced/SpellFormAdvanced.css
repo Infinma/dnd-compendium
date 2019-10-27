@@ -1,26 +1,22 @@
 @import "../../../../theme.css";
 
-form.adv-filter ul {
+form.adv-filter .check-filter {
   margin: 0;
   padding: 0;
   list-style-type: none;
   display: flex;
+  flex-flow: row wrap;
 }
 
-form.adv-filter p {
-  text-align: center;
-}
-
-form.adv-filter li {
-  margin: 0 0.5em;
+form.adv-filter .check-filter div {
+  margin: 0.5em 0.5em 0;
   padding: 1em;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  flex-basis: 0;
 }
 
-form.adv-filter li.active {
+form.adv-filter .check-filter div.active {
   background: var(--secondary-color);
   color: var(--text-color);
 }

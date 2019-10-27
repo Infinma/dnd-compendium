@@ -3,7 +3,9 @@ export const SpellKey = {
   LEVEL: 'level',
   CANTRIP: 'Cantrip',
   CLASS: 'class',
-  SCHOOL: 'school'
+  SCHOOL: 'school',
+  SOURCE: 'source',
+  RITUAL: 'ritual'
 };
 export const SpellLevels = [
   SpellKey.CANTRIP,
@@ -37,3 +39,15 @@ export const SpellClasses = [
   'Warlock',
   'Wizard'
 ];
+export const SpellSources = [
+  "Player's Handbook",
+  "Sword Coast Adventurer's Guide",
+  "Elemental Evil Player's Companion",
+  "Xanathar's Guide to Everything"
+];
+export const SpellSourceMap = {
+  [SpellSources[0]]: "Player's Handbook",
+  [SpellSources[1]]: "Sword Coast Adventurer's Guide",
+  [SpellSources[2]]: "Elemental Evil Player's Companion",
+  [SpellSources[3]]: "Xanathar's Guide to Everything"
+};

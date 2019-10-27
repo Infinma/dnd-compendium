@@ -1,6 +1,7 @@
 import React from 'react';
 import './SpellFormAdvanced.css';
-import { SpellKey, SpellLevels, SpellSchools, SpellClasses } from '../../../../lib/KeyLoader';
+import { SpellKey, SpellLevels, SpellSchools, SpellClasses, 
+  SpellSources } from '../../../../lib/KeyLoader';
 import { ObjectContains } from '../../../../lib/Utils';
 
 class SpellFormAdvanced extends React.Component {
@@ -10,57 +11,66 @@ class SpellFormAdvanced extends React.Component {
       active: {
         [SpellKey.LEVEL]: false,
         [SpellKey.SCHOOL]: false,
-        [SpellKey.CLASS]: false
+        [SpellKey.CLASS]: false,
+        [SpellKey.SOURCE]: false,
+        [SpellKey.RITUAL]: false
       },
       [SpellKey.LEVEL]: {
-        Cantrip: false,
-        '1st-level': false,
-        '2nd-level': false,
-        '3rd-level': false,
-        '4th-level': false,
-        '5th-level': false,
-        '6th-level': false,
-        '7th-level': false,
-        '8th-level': false,
-        '9th-level': false
+        [SpellLevels[0]]: false,
+        [SpellLevels[1]]: false,
+        [SpellLevels[2]]: false,
+        [SpellLevels[3]]: false,
+        [SpellLevels[4]]: false,
+        [SpellLevels[5]]: false,
+        [SpellLevels[6]]: false,
+        [SpellLevels[7]]: false,
+        [SpellLevels[8]]: false,
+        [SpellLevels[9]]: false
       },
       [SpellKey.SCHOOL]: {
-        Abjuration: false,
-        Conjuration: false,
-        Divination: false,
-        Enchantment: false,
-        Evocation: false,
-        Illusion: false,
-        Necromancy: false,
-        Transmutation: false
+        [SpellSchools[0]]: false,
+        [SpellSchools[1]]: false,
+        [SpellSchools[2]]: false,
+        [SpellSchools[3]]: false,
+        [SpellSchools[4]]: false,
+        [SpellSchools[5]]: false,
+        [SpellSchools[6]]: false,
+        [SpellSchools[7]]: false
       },
       [SpellKey.CLASS]: {
-        Bard: false,
-        Cleric: false,
-        Druid: false,
-        Paladin: false,
-        Ranger: false,
-        Sorcerer: false,
-        Warlock: false,
-        Wizard: false
+        [SpellClasses[0]]: false,
+        [SpellClasses[1]]: false,
+        [SpellClasses[2]]: false,
+        [SpellClasses[3]]: false,
+        [SpellClasses[4]]: false,
+        [SpellClasses[5]]: false,
+        [SpellClasses[6]]: false,
+        [SpellClasses[7]]: false
+      },
+      [SpellKey.SOURCE]: {
+        [SpellSources[0]]: false,
+        [SpellSources[1]]: false,
+        [SpellSources[2]]: false,
+        [SpellSources[3]]: false
       }
     };
     this.createCheckboxArray = this.createCheckboxArray.bind(this);
     this.updateCheckbox = this.updateCheckbox.bind(this);
     this.submitFilter = this.submitFilter.bind(this);
+    this.updateActive = this.updateActive.bind(this);
   }
 
   createCheckboxArray(arr, type) {
-    let checkboxList = arr.map((info, i) => {
+    let checkboxList = arr.map((label, i) => {
       return (
         <label key={i}>
           <input
             type="checkbox"
-            name={info}
+            name={label}
             onChange={ this.updateCheckbox }
-            checked={ this.state[type][info] }
+            checked={ this.state[type][label] }
           />
-          {` ${info}`}
+          {` ${label}`}
         </label>
       );
     });
@@ -74,8 +84,10 @@ class SpellFormAdvanced extends React.Component {
       type = SpellKey.CLASS; 
     } else if (SpellLevels.includes(name)) {
       type = SpellKey.LEVEL;
-    } else {
+    } else if (SpellSchools.includes(name)) {
       type = SpellKey.SCHOOL;
+    } else if (SpellSources.includes(name)) {
+      type = SpellKey.SOURCE;
     }
     this.setState((prevState) => {
       let newState = { ...prevState[type] };
@@ -87,13 +99,27 @@ class SpellFormAdvanced extends React.Component {
           };
         }
       }
-      let active = { ...prevState.active }
+      let active = { ...prevState.active };
       active[type] = checked;
       return {
         [type]: newState,
         active: active
       };
     })
+  }
+
+  /** 
+   * For the case where we only update active (Ex. Ritual)
+  */
+  updateActive(e) {
+    const { name, checked } = e.target;
+    this.setState((prevState) => {
+      let active = {...prevState.active};
+      active[name] = checked;
+      return {
+        active: active
+      };
+    });
   }
 
   submitFilter(e) {
@@ -105,22 +131,39 @@ class SpellFormAdvanced extends React.Component {
     let checkboxLevel = this.createCheckboxArray(SpellLevels, SpellKey.LEVEL);
     let checkboxSchool = this.createCheckboxArray(SpellSchools, SpellKey.SCHOOL);
     let checkboxClass = this.createCheckboxArray(SpellClasses, SpellKey.CLASS);
+    let checkboxSource = this.createCheckboxArray(SpellSources, SpellKey.SOURCE);
     return (
       <form className="adv-filter" onSubmit={ this.submitFilter }>
-        <ul>
-          <li className={ this.state.active.level ? 'active' : '' } >
+        <div className="check-filter">
+          <div className={ this.state.active[SpellKey.LEVEL] ? 'active' : '' } >
             <p>LEVEL</p>
             { checkboxLevel }
-          </li>
-          <li className={ this.state.active.school ? 'active' : '' } >
+          </div>
+          <div className={ this.state.active[SpellKey.SCHOOL] ? 'active' : '' } >
             <p>SCHOOL</p>
             { checkboxSchool }
-          </li>
-          <li className={ this.state.active.class ? 'active' : '' } >
+          </div>
+          <div className={ this.state.active[SpellKey.CLASS] ? 'active' : '' } >
             <p>CLASS</p>
             { checkboxClass }
-          </li>
-        </ul>
+          </div >
+          <div className={ this.state.active[SpellKey.SOURCE] ? 'active' : '' } >
+            <p>SOURCE</p>
+            { checkboxSource }
+          </div>
+          <div className={ this.state.active[SpellKey.RITUAL] ? 'active' : '' } >
+            <p>RITUAL</p>
+            <label>
+              <input
+                type="checkbox"
+                name={ SpellKey.RITUAL }
+                onChange={ this.updateActive }
+                checked={ this.state.active[SpellKey.RITUAL] }
+              />
+              {` Is Ritual`}
+            </label>
+          </div>
+        </div>
         <button>APPLY</button>
       </form>
     );
