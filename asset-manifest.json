@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dnd-compendium/static/css/main.de00c47e.chunk.css",
-    "main.js": "/dnd-compendium/static/js/main.c3a12fe0.chunk.js",
-    "main.js.map": "/dnd-compendium/static/js/main.c3a12fe0.chunk.js.map",
+    "main.js": "/dnd-compendium/static/js/main.75af0fec.chunk.js",
+    "main.js.map": "/dnd-compendium/static/js/main.75af0fec.chunk.js.map",
     "runtime-main.js": "/dnd-compendium/static/js/runtime-main.b1d26bac.js",
     "runtime-main.js.map": "/dnd-compendium/static/js/runtime-main.b1d26bac.js.map",
     "static/js/2.fb9bef79.chunk.js": "/dnd-compendium/static/js/2.fb9bef79.chunk.js",
     "static/js/2.fb9bef79.chunk.js.map": "/dnd-compendium/static/js/2.fb9bef79.chunk.js.map",
     "index.html": "/dnd-compendium/index.html",
-    "precache-manifest.d83ccaca5948c19bf93ef4a4a237a788.js": "/dnd-compendium/precache-manifest.d83ccaca5948c19bf93ef4a4a237a788.js",
+    "precache-manifest.01139bc1f16452a8c4acb6dc8df42975.js": "/dnd-compendium/precache-manifest.01139bc1f16452a8c4acb6dc8df42975.js",
     "service-worker.js": "/dnd-compendium/service-worker.js",
     "static/css/main.de00c47e.chunk.css.map": "/dnd-compendium/static/css/main.de00c47e.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.b1d26bac.js",
     "static/js/2.fb9bef79.chunk.js",
     "static/css/main.de00c47e.chunk.css",
-    "static/js/main.c3a12fe0.chunk.js"
+    "static/js/main.75af0fec.chunk.js"
   ]
 }
